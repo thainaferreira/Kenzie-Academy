@@ -3,7 +3,6 @@ function nota (arrayNotas) {
         let aluno = arrayNotas[i];
         console.log ('Aluno ' + i);
         }
-    }
     for (let j = 0; j < arrayNotas.length; j++){
         let notas = aluno[j];
             if (notas[j] > [3]){
@@ -11,6 +10,7 @@ function nota (arrayNotas) {
             }else{
                 console.log (notas + ', ');
             }
+        }
     }
 function somarNotas (arrayNotas, nota) {
     for (j = 0; j < notas.length; j++){
