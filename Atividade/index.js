@@ -1,36 +1,34 @@
-function nota (arrayNotas) {
+var arrayNotas = [80,80,80,80,80];
+
+let mediaTotal = calcularMedia(arrayNotas);
+
+avaliacao(mediaTotal);
+
+function somarNotas (arrayNotas){
+    let soma = 0;    
     for (let i = 0; i < arrayNotas.length; i++){
-        let aluno = arrayNotas[i];
-        console.log ('Aluno ' + i);
-        }
-    for (let j = 0; j < arrayNotas.length; j++){
-        let notas = aluno[j];
-            if (notas[j] > [3]){
-                return console.log (notas + ', ' + 'A nota ' + [4] + ' é um bônus!');
-            }else{
-                console.log (notas + ', ');
-            }
-        }
+        soma += arrayNotas[i];
     }
-function somarNotas (arrayNotas, nota) {
-    for (j = 0; j < notas.length; j++){
-        let soma = soma + notas[j];
-    }
-    console.log ('A soma das notas do aluno ' + i +' é: ' + soma);
+    return soma;
 }
-function calcularMedia (arrayNotas, nota, somarNotas) {
-    while (j < notas.length) {
-        mediaTotal = soma / notas[j];
-            console.log ('A media do aluno ' + i + 'é: ' + mediaTotal);
-        j++
-    }
+
+function calcularMedia (arrayNotas){
+    if (arrayNotas === 4){
+            return (somarNotas(arrayNotas) / 4) + arrayNotas[4];
+        } else{
+            return somarNotas(arrayNotas) / 4;
+        }
 }
-function avaliacao (arrayNotas, calcularMedia){
+
+function avaliacao (mediaTotal){    
     if(mediaTotal === 100){
-        console.log('O aluno passou com nota maxima!')
+        console.log('O aluno passou com nota maxima!');
+        return true;
     } else if (mediaTotal >= 70) {
-        console.log('O aluno passou!')
+        console.log('O aluno passou!');
+        return true;
      } else {
-        console.log('O aluno reprovou!')
-    }
+        console.log('O aluno reprovou!');        
+     }
+     return false;
 }
