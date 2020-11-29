@@ -1,34 +1,45 @@
+/************************************************************************************
+ *                                    PASSO 1                                       *
 const EXPLORADOR = 'Thaina';
 let bolsaDeItens = [];
-let Moedas = 0;
+let moedas = 0;
 let energia = 5;
 let recompensas = ['Chave', 'Duck, o Pato de Borracha', 'Moeda', 'Moeda', 'Moeda', 'Moeda', 'Moeda'];
-//---------------------------------------------------------------------------------------------------------
+
+/************************************************************************************
+ *                                    PASSO 2                                       *
+ ************************************************************************************/
+
 function taverna(){
     console.log ('Bem vindo(a) ' + EXPLORADOR + ', você entrou na Taverna!');
-    for (let i = 0; i < energia.length; i++) {
         if (energia < 5){
+            for (let i = 1; energia < 5; i++) {           
+                energia += 1;
+            }
             console.log (EXPLORADOR + ' está descansando!');
-            energia += 1;
-         }else{
-            return console.log(EXPLORADOR + ' está revitalizado(a)!');
-         }
-    }
+         } else {
+            console.log(EXPLORADOR + ' está revitalizado(a)!');
+        }   
   }
-//---------------------------------------------------------------------------------------------------------
+
+/************************************************************************************
+ *                                    PASSO 3                                       *
+ ************************************************************************************/
+
 function pegarItem (item){
-    for (let i = 0; i < item.length; i++){
-        if (item[i] === 'Moeda'){
-            console.log ('PARABÉNS ' + EXPLORADOR + '! Você ganhou uma MOEDA!')
-            Moedas += 1;
+        if (item === 'Moeda'){
+            console.log ('PARABÉNS ' + EXPLORADOR + '! Você ganhou uma MOEDA!');
+            moedas += 1;
         }else{
-            console.log ('PARABÉNS ' + EXPLORADOR + '! Você ganhou um ITEM!')
+            console.log ('PARABÉNS ' + EXPLORADOR + '! Você ganhou um ITEM!');
             bolsaDeItens.push(item);
-        } 
-        return true;
+        }         
     }
-}
-//---------------------------------------------------------------------------------------------------------
+
+/************************************************************************************
+ *                                    PASSO 4                                       *
+ ************************************************************************************/
+
 function batalha(){
     console.log(EXPLORADOR + ' encontrou um MONSTRO!');
     if (energia < 1){
@@ -37,9 +48,9 @@ function batalha(){
     }else{
         console.log ('PARABÉNS ' + EXPLORADOR + ', você derrotou o monstro!');
         energia -= 1;
-            if (energia === 0){
-            console.log (EXPLORADOR + ' fugiu para a Taverna.');
-            return false;
+        if (energia === 0){
+        console.log (EXPLORADOR + ' fugiu para a Taverna.');
+          return false;
         }else{
             return true;
         }
@@ -62,11 +73,15 @@ function explorar(){
         }
     }
 }
-//---------------------------------------------------------------------------------------------------------
+
+/************************************************************************************
+ *                                    PASSO 5                                       *
+ ************************************************************************************/
+
 function abrirBau (){
     for (let i = 0; i < bolsaDeItens.length; i++){
         if (bolsaDeItens[i] === 'Chave'){
-            console.log('PARABÉNS' + EXPLORADOR + ', você finalmente abriu o baú, é perigoso lá fora, leve seu certificado!')
+            console.log('Parabéns, você finalmente abriu o baú, é perigoso lá fora, leve seu certificado!')
             return true;
         }else{
             return false;
